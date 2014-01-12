@@ -1,0 +1,16 @@
+[general]
+generalwelcome=Modulo de Aprendizaje de Codigo Morse
+generalbye=""
+
+[basic]
+basicwelcome=hi
+basicbye=bye
+
+[intermediate]
+intermediatewelcome=hi
+intermediatebye=bye
+
+[advanced]
+advancedwelcome=hi
+advancedbye=bye
+
