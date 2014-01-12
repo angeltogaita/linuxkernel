@@ -14,6 +14,8 @@ export pipCommandUpgrade=--upgrade
 
 export packageDistribute=distribute
 export packageFeedparser=feedparser
+export packagePywws=pywws
+export packageTweepy=tweepy
 
 # =============================================================================
 # Script Functions
@@ -34,5 +36,7 @@ aptgetFunctionInstall() {
 
 aptgetFunctionInstall $packageDistribute
 aptgetFunctionInstall $packageFeedparser
+aptgetFunctionInstall $packagePywws
+aptgetFunctionInstall $packageTweepy
 
 # End of file
