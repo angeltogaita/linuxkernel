@@ -5,7 +5,7 @@ import threading
 import unicodedata
 import time
 
-from ports import Ports
+from pushtotalk import PushToTalk
 
 class Synthetizer(threading.Thread):
 
@@ -19,7 +19,7 @@ class Synthetizer(threading.Thread):
 
 		self.setsynthetizer(self.synthetizer)
 
-		self.port = Ports()
+		self.ptt = PushToTalk()
 
 	def setsynthetizer(self, synthetizer):
 		self.synthetizer = synthetizer
@@ -48,14 +48,14 @@ class Synthetizer(threading.Thread):
 	def speechit(self, text):
 		#text = unicodedata.normalize('NFKD', text)
 		self.lock.acquire()
-		self.port.openport()
+		self.ptt.openport()
 		text = text.encode('ASCII', 'ignore')
 		print text
 		time.sleep(4)
 		command = "echo " + "" + " | " + self.arguments
 		command = "echo " + text + " | " + self.arguments
 		status, output = commands.getstatusoutput(command)
-		self.port.closeport()
+		self.ptt.closeport()
 		self.lock.release()
 
 if __name__ == "__main__":
