@@ -1,1 +1,49 @@
-APPLICATIONS README
+Readme LinuxKernel/Scripts/Applications
+---------------------------------------
+
+Sayulita Voice Project HAM Radio Repeater
+
+Architecture
+------------
+
+Report Infrastructure
+|-log
+|-voice
+|-telemetry
+|-twitter
+|-cw
+
+Hardware Infrastructure
+|-radio
+|-tnc
+|-internet
+|-gps
+|-sensors
+  |-temperature
+
+Interface Infrastructure
+|-serial
+|-parallel
+|-ethernet
+|-wifi
+|-i2c
+
+Service Infraestructure
+|-news
+|-weather
+|-sismic
+|-events
+|-location
+|-date
+|-time
+|-alarm
+|-learning
+
+Usages
+|-High Altitude Ballon Flight Controller
+|-Repeater Assistant
+
+Details
+|-Report Infraestructure
+  can report through file, voice, telemetry and twitter
+  offers 3 level of information: none, minimum, maximum
