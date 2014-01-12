@@ -4,6 +4,8 @@ import time
 import feedparser
 import os
 
+from voicesynthetizer import Synthetizer
+
 class Weather:
 
 	def __init__(self, method):
@@ -12,6 +14,8 @@ class Weather:
 		self.city = ""
 		self.high = ""
 		self.low = ""
+
+		self.speaker = Synthetizer("festival", "spanish")
 
 		self.parser(self.url)
 
@@ -40,9 +44,9 @@ class Weather:
 		return
 
 	def test(self):
-		print "Reporte del Clima en " + self.city
-		print "Temperatura Maxima de " + self.high + " grados centigrados"
-		print "Temperature Minima de " + self.low + " grados centigrados"
+		self.speaker.speechit("Reporte del Clima en " + self.city)
+		self.speaker.speechit("Temperatura Maxima de " + self.high + " grados centigrados")
+		self.speaker.speechit("Temperature Minima de " + self.low + " grados centigrados")
 		return
 
 if __name__ == '__main__':

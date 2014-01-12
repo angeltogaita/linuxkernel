@@ -2,6 +2,7 @@ import commands
 import logging
 import sys
 import threading
+import time
 import serial
 
 class PushToTalk(threading.Thread):
@@ -16,6 +17,7 @@ class PushToTalk(threading.Thread):
 		self.port.write("\r\nSay something:")
 		rcv = self.port.read(10)
 		self.port.write("\r\nYou sent:" + repr(rcv))
+		time.sleep(3)
 
         def closeport(self):
 		self.port.close()

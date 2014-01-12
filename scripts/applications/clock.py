@@ -8,6 +8,7 @@ class Clock():
 
 	def clockget(self):
 		self.speaker.speechit(time.strftime("%A %B %d %Y %H:%M:%S"))
+		
 
 
 if __name__ == "__main__":
